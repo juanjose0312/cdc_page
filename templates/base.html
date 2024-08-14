@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Cerrajeria Distribuidora Colombia</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Salir</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}">Ingresar</a>
+    {% endif %}
+    {% block content %}{% endblock content %}
+</body>
+</html>

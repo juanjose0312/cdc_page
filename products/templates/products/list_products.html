@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<ul class="content_grid">
+{% for product in products%}
+{% if product.available %}
+    <li class="card">
+        <p class="card_id">{{product.id_catalog}}</p>
+        <img
+            class="card-image"
+            src="{{product.image.url}}"
+            alt="{{product.name}}"
+            style="max-width: 300px;"
+        >
+        <p class="card-text">{{product.description}}</p>
+
+        <div class="card_decoration"></div>
+
+        <div>
+            <p class="card_price">$ {{product.wholesale_price}}</p>
+            <div class="card_decoration_2"></div>
+            <p class="card_price">$ {{product.retail_price}}</p>
+        </div>
+
+        <div class="card_decoration"></div>
+
+        <button class="card_add">+</button>
+    </li>
+{% endif %}
+{% endfor %}
+</ul>
+{% endblock content %}
