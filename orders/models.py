@@ -18,4 +18,4 @@ class OrderProduct(models.Model):
     quantity = models.PositiveIntegerField()
 
     def __str__(self):
-        return f'{self.orden}. {self.product} x {self.quantity}'
+        return f'{self.order}. {self.product} x {self.quantity}'

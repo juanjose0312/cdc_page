@@ -23,8 +23,11 @@
         </div>
 
         <div class="card_decoration"></div>
-
-        <button class="card_add">+</button>
+        
+        <form action="{% url 'agregar_producto' product.id_catalog %}" method="post">
+            {% csrf_token %}
+            <button class="card_add">+</button>
+        </form>
     </li>
 {% endif %}
 {% endfor %}

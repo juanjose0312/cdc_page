@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Orden</h2>
+    
+    {{order.user.username}}
+    {{order.order_date}}
+
+    <ul>
+    {% for product_order in order.orderproduct_set.all %}
+        <li>
+            {{product_order.product.name}}
+            {{product_order.quantity}}
+            {{product_order.product.retail_price}}
+        </li>
+
+    {% empty %}
+        <li>No hay productos en la orden</li>
+
+    {% endfor %}
+    </ul>
+
+
+{% endblock content %}

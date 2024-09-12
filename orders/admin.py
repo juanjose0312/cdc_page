@@ -8,6 +8,7 @@ class OrderProductInline(admin.TabularInline):
 # Register your models here.
 class OrderAdmin(admin.ModelAdmin):
     model = Order
+    inlines = (OrderProductInline,)
     #readonly_fields = ('user','is_active','order_date')
     #list_display = ('id','user','is_active','order_date')
     #search_fields = ('user','id')
